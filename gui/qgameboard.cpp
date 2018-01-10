@@ -47,6 +47,7 @@ QGameBoard::QGameBoard(QWidget *parent) :
     drawBoard();
 
     // create the score widget and add it to the board
+
     score = new QLabel(QString("SCORE: %1").arg(game->getScore()));
     score->setStyleSheet("QLabel { color: rgb(235,224,214); font: 16pt; }");
     score->setFixedHeight(50);

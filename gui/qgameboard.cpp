@@ -92,7 +92,7 @@ void QGameBoard::notify()
 
 void QGameBoard::drawBoard()
 {
-    delete boardLayout;
+    // delete boardLayout;
     boardLayout = new QGridLayout();
     for (int i = 0; i < game->getGameBoard()->getDimension(); ++i) {
         for (int j = 0; j < game->getGameBoard()->getDimension(); ++j) {

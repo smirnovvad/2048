@@ -6,7 +6,7 @@
 class Tile
 {
 public:
-    Tile() { value = 2; upgratedThisMove = false; }
+    Tile() { value = 3; upgratedThisMove = false; }
     Tile(const Tile& other) { this->value = other.value; }
     Tile(int value) { this->value = value; }
     int getValue() { return value; }

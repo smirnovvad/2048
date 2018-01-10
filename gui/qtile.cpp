@@ -17,35 +17,35 @@ void QTile::draw()
     } else {
         setText(QString::number(tile->getValue()));
         switch (tile->getValue()) {
-        case 2: {
+        case 3: {
             setStyleSheet("QTile { background: rgb(238,228,218); color: rgb(119,110,101); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 4: {
+        case 6: {
             setStyleSheet("QTile { background: rgb(237,224,200); color: rgb(119,110,101); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 8: {
+        case 12: {
             setStyleSheet("QTile { background: rgb(242,177,121); color: rgb(255,255,255); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 16: {
+        case 24: {
             setStyleSheet("QTile { background: rgb(245,150,100); color: rgb(255,255,255); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 32: {
+        case 48: {
             setStyleSheet("QTile { background: rgb(245,125,95); color: rgb(255,255,255); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 64: {
+        case 96: {
             setStyleSheet("QTile { background: rgb(245,95,60); color: rgb(255,255,255); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 128: {
+        case 192: {
             setStyleSheet("QTile { background: rgb(237,207,114); color: rgb(255,255,255); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 256: {
+        case 384: {
             QGraphicsDropShadowEffect *dse = new QGraphicsDropShadowEffect();
             dse->setColor(Qt::yellow);
             dse->setBlurRadius(20);
@@ -54,7 +54,7 @@ void QTile::draw()
             setStyleSheet("QTile { background: rgb(237,204,97); color: rgb(255,255,255); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 512: {
+        case 768: {
             QGraphicsDropShadowEffect *dse = new QGraphicsDropShadowEffect();
             dse->setColor(Qt::yellow);
             dse->setBlurRadius(30);
@@ -63,7 +63,7 @@ void QTile::draw()
             setStyleSheet("QTile { background: rgb(237,204,97); color: rgb(255,255,255); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 1024: {
+        case 1536: {
             QGraphicsDropShadowEffect *dse = new QGraphicsDropShadowEffect();
             dse->setColor(Qt::yellow);
             dse->setBlurRadius(40);
@@ -72,7 +72,7 @@ void QTile::draw()
             setStyleSheet("QTile { background: rgb(237,204,97); color: rgb(255,255,255); font: bold; border-radius: 10px; font: 40pt; }");
             break;
         }
-        case 2048: {
+        case 3072: {
             QGraphicsDropShadowEffect *dse = new QGraphicsDropShadowEffect();
             dse->setColor(Qt::yellow);
             dse->setBlurRadius(50);

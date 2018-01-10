@@ -13,6 +13,7 @@ class QKeyEvent;
 class QTile;
 class QGridLayout;
 class QVBoxLayout;
+class QHBoxLayout;
 class QLabel;
 
 class QGameBoard : public QWidget, public Observer
@@ -23,6 +24,7 @@ public:
     ~QGameBoard();
 
     void notify();
+    QResetButton* getResetBtn() const;
 
 private:
 
@@ -31,6 +33,8 @@ private:
     QVector<QVector<QTile*> > gui_board;
     // main layout
     QVBoxLayout *mainLayout;
+    // score layout
+    QHBoxLayout *scoreLayout;
     // grid layout of board
     QGridLayout *boardLayout;
     // score widget
@@ -39,6 +43,8 @@ private:
     QGameOverWindow gameOverWindow;
     // winner widget
     QLabel *youwin;
+
+    QResetButton* reset;
 
     void drawBoard();
 

@@ -6,6 +6,7 @@
 #include "gui/qresetbutton.h"
 
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QGridLayout>
 #include <QPushButton>
 #include <QLabel>
@@ -28,8 +29,10 @@ QGameBoard::QGameBoard(QWidget *parent) :
 
     // create the main layout
     mainLayout = new QVBoxLayout();
+    // score layout
+    scoreLayout = new QHBoxLayout();
     setLayout(mainLayout);
-
+    mainLayout->addLayout(scoreLayout);
     // will be created in drawBoard()
     boardLayout = NULL;
 
@@ -47,16 +50,23 @@ QGameBoard::QGameBoard(QWidget *parent) :
     drawBoard();
 
     // create the score widget and add it to the board
-
     score = new QLabel(QString("SCORE: %1").arg(game->getScore()));
     score->setStyleSheet("QLabel { color: rgb(235,224,214); font: 16pt; }");
     score->setFixedHeight(50);
-    mainLayout->insertWidget(1, score, 0, Qt::AlignRight);
+
+    // reset button
+    reset = new QResetButton(this);
+    reset->setFixedHeight(50);
+    reset->setFixedWidth(100);
+
+    scoreLayout->insertWidget(1, score, 0, Qt::AlignRight);
+    scoreLayout->insertWidget(1, reset, 0, Qt::AlignRight);
 
     // style sheet of the board
     setStyleSheet("QGameBoard { background-color: rgb(187,173,160) }");
 
     connect(gameOverWindow.getResetBtn(), SIGNAL(clicked()), this, SLOT(resetGame()));
+    connect(reset, SIGNAL(clicked()), this, SLOT(resetGame()));
 }
 
 void QGameBoard::keyPressEvent(QKeyEvent *event)
@@ -92,7 +102,7 @@ void QGameBoard::notify()
 
 void QGameBoard::drawBoard()
 {
-    // delete boardLayout;
+    delete boardLayout;
     boardLayout = new QGridLayout();
     for (int i = 0; i < game->getGameBoard()->getDimension(); ++i) {
         for (int j = 0; j < game->getGameBoard()->getDimension(); ++j) {

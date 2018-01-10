@@ -895,6 +895,7 @@ qgameboard.o: gui/qgameboard.cpp gui/qgameboard.h \
 		gui/qresetbutton.h \
 		/usr/local/Cellar/qt/5.10.0_1/lib/QtWidgets.framework/Headers/QVBoxLayout \
 		/usr/local/Cellar/qt/5.10.0_1/lib/QtWidgets.framework/Headers/qboxlayout.h \
+		/usr/local/Cellar/qt/5.10.0_1/lib/QtWidgets.framework/Headers/QHBoxLayout \
 		/usr/local/Cellar/qt/5.10.0_1/lib/QtWidgets.framework/Headers/QGridLayout \
 		/usr/local/Cellar/qt/5.10.0_1/lib/QtWidgets.framework/Headers/qgridlayout.h \
 		/usr/local/Cellar/qt/5.10.0_1/lib/QtWidgets.framework/Headers/QPushButton \
